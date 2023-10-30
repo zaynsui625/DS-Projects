@@ -1,0 +1,9 @@
+example output from SQL:
+id: unique user_id
+email: user email address
+domain: @gmail.com, @yahoo.com, etc.
+How to get the domain from email using SQL:
+select ptnid,lower(emailaddladdr) as emailaddress,RIGHT(lower(emailaddladdr), CHARINDEX('@', REVERSE(lower(emailaddladdr)))) as domain,age
+from konami.dailyptnsum_ 
+where DATE(issuedate) = CURRENT_DATE or DATE(issuedate) = CURRENT_DATE - INTERVAL '1 day' #optional
+order by ptnid desc
